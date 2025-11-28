@@ -28,8 +28,8 @@
 }
 
 body {
-    background: var(--background);
-    color: var(--foreground);
+    background: var(--color-background);
+    color: var(--color-foreground);
     font-family: var(--font-roboto), sans-serif;
     font-size: 14px;
     line-height: 1.01;
@@ -53,62 +53,10 @@ button {
     }
 }
 
-@utility custom-popper {
-    & .react-datepicker {
-        font-family: var(--font-roboto) !important;
+@utility normal-text {
+    font-size: 16px;
+}
 
-        border: 1px solid var(--color-neutral-30) !important;
-        box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
-    }
-    & .react-datepicker__header {
-        background-color: white !important;
-        border-bottom: none !important;
-    }
-
-    & .react-datepicker__triangle {
-        fill: white !important;
-        left: 10px !important;
-        stroke: var(--color-neutral-30) !important;
-    }
-
-    & .custom-dayweek {
-        font-weight: 700;
-        font-size: 13px !important;
-        line-height: 1.5rem !important;
-        width: 23px !important;
-        height: 23px !important;
-        margin: 1px !important;
-    }
-
-    & .react-datepicker__day {
-        font-size: 13px !important;
-        line-height: 1.5rem !important;
-        color: var(--color-neutral-90) !important;
-        width: 23px !important;
-        height: 23px !important;
-        margin: 1px !important;
-    }
-
-    & .react-datepicker__day--keyboard-selected {
-        background-color: transparent !important;
-        color: var(--color-neutral-90) !important;
-    }
-
-    & .sunday-highlight {
-        background-color: var(--color-neutral-0) !important;
-    }
-
-    & .react-datepicker__day--outside-month {
-        background-color: transparent !important;
-        color: var(--color-neutral-60) !important;
-    }
-
-    & .react-datepicker__day--selected {
-        background-color: var(--color-accent) !important;
-        color: var(--color-white) !important;
-    }
-
-    & .react-datepicker__day--disabled {
-        color: var(--color-neutral-60) !important;
-    }
+@utility small-text {
+    font-size: 14px;
 }

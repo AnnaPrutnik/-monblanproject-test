@@ -7,6 +7,7 @@ import DatePicker from "react-datepicker";
 import type { DatePicker as DataPickerType } from "react-datepicker";
 
 import "react-datepicker/dist/react-datepicker.css";
+import "./DataRangeInput.css";
 
 interface DateRangeInputProps {
     name: string;
