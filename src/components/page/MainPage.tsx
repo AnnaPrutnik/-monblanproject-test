@@ -17,7 +17,7 @@ export const MainPage = () => {
             <div className="absolute top-0 left-0 -z-1 w-[630px] h-[398px]">
                 <Image
                     src={topDecorationImage}
-                    alt="image for decoration"
+                    alt=""
                     aria-hidden
                     className="w-full"
                     width={630}
@@ -31,7 +31,7 @@ export const MainPage = () => {
             <div className="absolute right-0 bottom-[45px]">
                 <Image
                     src={bottomDecoration}
-                    alt="image for decoration"
+                    alt=""
                     aria-hidden
                     className="w-full"
                     width={210}

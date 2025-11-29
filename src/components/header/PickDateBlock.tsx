@@ -15,22 +15,45 @@ export const PickDateBlock = ({ setToValue, toValue }: ToValueProps) => {
     const [fromValue, setFromValue] = useState<Date | null>(null);
 
     return (
-        <div className="flex gap-[11px] items-baseline">
+        <section
+            className="flex gap-[11px] items-baseline"
+            aria-label={dateLabel}
+        >
             <p className="normal-text ">{dateLabel}</p>
             <div className="flex gap-[22px]">
-                <DateRangeInput
-                    name="from"
-                    value={fromValue}
-                    setValue={setFromValue}
-                    maxValue={toValue || undefined}
-                />
-                <DateRangeInput
-                    name="to"
-                    value={toValue}
-                    setValue={setToValue}
-                    minValue={fromValue || undefined}
-                />
+                <div className="flex flex-col gap-[4px]">
+                    <label
+                        className="small-text text-neutral-80"
+                        htmlFor="from-date"
+                    >
+                        
+                    
+                    <DateRangeInput
+                        id="from-date"
+                        name="from"
+                        value={fromValue}
+                        setValue={setFromValue}
+                        maxValue={toValue || undefined}
+                    />
+                    </label>
+                </div>
+                <div className="flex flex-col gap-[4px]">
+                    <label
+                        className="small-text text-neutral-80"
+                        htmlFor="to-date"
+                    >
+                        
+                   
+                    <DateRangeInput
+                        id="to-date"
+                        name="to"
+                        value={toValue}
+                        setValue={setToValue}
+                        minValue={fromValue || undefined}
+                    />
+                     </label>
+                </div>
             </div>
-        </div>
+        </section>
     );
 };

@@ -10,6 +10,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import "./DataRangeInput.css";
 
 interface DateRangeInputProps {
+    id: string;
     name: string;
     value: Date | null;
     setValue: Dispatch<SetStateAction<Date | null>>;
@@ -18,6 +19,7 @@ interface DateRangeInputProps {
 }
 
 export const DateRangeInput = ({
+    id,
     name,
     value,
     setValue,
@@ -25,6 +27,11 @@ export const DateRangeInput = ({
     minValue,
 }: DateRangeInputProps) => {
     const inputRef = useRef(null);
+    const isFrom = name === "from";
+    const clearLabel = isFrom ? "Clear start date" : "Clear end date";
+    const calendarLabel = isFrom
+        ? "Open start date calendar"
+        : "Open end date calendar";
 
     const onClickClearBtn = () => {
         if (inputRef.current) {
@@ -43,6 +50,7 @@ export const DateRangeInput = ({
     return (
         <div className="relative ">
             <DatePicker
+                id={id}
                 ref={inputRef}
                 popperPlacement="bottom-start"
                 minDate={minValue}
@@ -105,7 +113,7 @@ export const DateRangeInput = ({
 
             <div className="flex absolute top-px right-px">
                 <button
-                    aria-label="clear input with start date"
+                    aria-label={clearLabel}
                     className="size-[26px] shrink-0  border-l border-r border-neutral-20 bg-neutral-10 text-neutral-80"
                     onClick={onClickClearBtn}
                     data-type={name}
@@ -113,7 +121,7 @@ export const DateRangeInput = ({
                     <Sprite name="icon-plus" className="size-6" />
                 </button>
                 <button
-                    aria-label="open date picker"
+                    aria-label={calendarLabel}
                     className="size-[26px]  shrink-0 bg-neutral-10 text-neutral-80 rounded-br-sm rounded-tr-sm"
                     data-type={name}
                     onClick={onClickCalendar}

@@ -19,12 +19,12 @@ export const ViewSwitcher = ({ changeMode, mode }: ViewSwitcherProps) => {
                     value={ModeEnum.ROW}
                     checked={mode === ModeEnum.ROW}
                     onChange={() => changeMode(ModeEnum.ROW)}
-                    className="hidden peer"
+                    className="sr-only peer"
                     aria-label="Switch to row view"
                 />
                 <div
                     className={twMerge(
-                        "transition-colors duration-500 peer-hover:text-neutral-60",
+                        "transition-colors duration-500 peer-hover:text-neutral-60 peer-focus-visible:text-accent",
                         mode === ModeEnum.ROW
                             ? "text-accent"
                             : "text-neutral-40"
@@ -41,12 +41,12 @@ export const ViewSwitcher = ({ changeMode, mode }: ViewSwitcherProps) => {
                     value={ModeEnum.TILES}
                     checked={mode === ModeEnum.TILES}
                     onChange={() => changeMode(ModeEnum.TILES)}
-                    className="hidden peer"
+                    className="sr-only peer"
                     aria-label="Switch to tiles view"
                 />
                 <div
                     className={twMerge(
-                        "transition-colors duration-500",
+                        "transition-colors duration-500 peer-focus-visible:text-accent",
                         mode === ModeEnum.TILES
                             ? "text-accent"
                             : "text-neutral-40"

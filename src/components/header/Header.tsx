@@ -18,7 +18,7 @@ export const Header = ({ setToValue, toValue }: HeaderProps) => {
                 <div className="ml-[55px]">
                     <Image
                         src={logo}
-                        alt="Logo"
+                        alt={`${name} logo`}
                         width={138}
                         height={138}
                         className="size-[138px] object-contain"
@@ -26,9 +26,9 @@ export const Header = ({ setToValue, toValue }: HeaderProps) => {
                 </div>
                 <div className="pb-[3px] flex flex-col justify-end">
                     <div className="flex gap-4 mb-4">
-                        <p className="font-montserrat font-medium text-[24px] tracking-[-0.01em]">
+                        <h1 className="font-montserrat font-medium text-[24px] tracking-[-0.01em]">
                             {name}
-                        </p>
+                        </h1>
 
                         <p className="border border-accent text-accent rounded-xs px-3 py-[6px] text-[13px] tracking-[-0.03em]">
                             {badge}
