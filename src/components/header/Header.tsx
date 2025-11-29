@@ -14,10 +14,7 @@ interface HeaderProps {
 export const Header = ({ setToValue, toValue }: HeaderProps) => {
     return (
         <header className="shadow-header bg-white-opacity">
-            <div
-                className="box pt-[6px] pb-[28px] flex gap-[86px] 
-            -end"
-            >
+            <div className="box pt-[6px] pb-[28px] flex gap-[86px]">
                 <div className="ml-[55px]">
                     <Image
                         src={logo}
@@ -40,7 +37,7 @@ export const Header = ({ setToValue, toValue }: HeaderProps) => {
                     <ul className="flex gap-[17px] mb-[19px]">
                         {statistics.map(({ label, total }, index) => (
                             <li key={index} className="min-w-[74px]">
-                                <p className="flex gap-1 text-[14px] ">
+                                <p className="flex gap-1 small-text ">
                                     <span className="font-bold"> {total}</span>
                                     <span className="font-medium">{label}</span>
                                 </p>
