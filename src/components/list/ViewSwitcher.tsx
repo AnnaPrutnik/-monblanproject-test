@@ -1,8 +1,8 @@
 "use client";
-import { Dispatch, SetStateAction } from "react";
 
 import { Sprite } from "../shared/Sprite";
 import { ModeEnum } from "./List";
+import { twMerge } from "tailwind-merge";
 
 interface ViewSwitcherProps {
     mode: ModeEnum;
@@ -19,16 +19,16 @@ export const ViewSwitcher = ({ changeMode, mode }: ViewSwitcherProps) => {
                     value={ModeEnum.ROW}
                     checked={mode === ModeEnum.ROW}
                     onChange={() => changeMode(ModeEnum.ROW)}
-                    className="hidden"
-                    aria-label="Row view"
+                    className="hidden peer"
+                    aria-label="Switch to row view"
                 />
                 <div
-                    className={
-                        "transition-colors " +
-                        (mode === ModeEnum.ROW
+                    className={twMerge(
+                        "transition-colors duration-500 peer-hover:text-neutral-60",
+                        mode === ModeEnum.ROW
                             ? "text-accent"
-                            : "text-neutral-40")
-                    }
+                            : "text-neutral-40"
+                    )}
                 >
                     <Sprite name="icon-row" className="w-6 h-[22px]" />
                 </div>
@@ -41,16 +41,16 @@ export const ViewSwitcher = ({ changeMode, mode }: ViewSwitcherProps) => {
                     value={ModeEnum.TILES}
                     checked={mode === ModeEnum.TILES}
                     onChange={() => changeMode(ModeEnum.TILES)}
-                    className="hidden"
-                    aria-label="Tiles view"
+                    className="hidden peer"
+                    aria-label="Switch to tiles view"
                 />
                 <div
-                    className={
-                        " transition-colors " +
-                        (mode === ModeEnum.TILES
+                    className={twMerge(
+                        "transition-colors duration-500",
+                        mode === ModeEnum.TILES
                             ? "text-accent"
-                            : "text-neutral-40")
-                    }
+                            : "text-neutral-40"
+                    )}
                 >
                     <Sprite name="icon-tiles" className="w-6 h-[22px]" />
                 </div>

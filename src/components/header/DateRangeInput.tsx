@@ -66,7 +66,7 @@ export const DateRangeInput = ({
                                 />
                             </button>
 
-                            <span className="text-[14px] font-bold">
+                            <span className="small-text font-bold">
                                 {date.toLocaleString("en", {
                                     month: "long",
                                     year: "numeric",

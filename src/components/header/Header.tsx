@@ -2,10 +2,16 @@ import Image from "next/image";
 import { siteText } from "@/src/assets/data/text";
 import logo from "@/src/assets/images/logo.svg";
 import { PickDateBlock } from "./PickDateBlock";
+import { Dispatch, SetStateAction } from "react";
 
 const { name, badge, statistics } = siteText;
 
-export const Header = () => {
+interface HeaderProps {
+    toValue: Date | null;
+    setToValue: Dispatch<SetStateAction<Date | null>>;
+}
+
+export const Header = ({ setToValue, toValue }: HeaderProps) => {
     return (
         <header className="shadow-header bg-white-opacity">
             <div
@@ -41,7 +47,7 @@ export const Header = () => {
                             </li>
                         ))}
                     </ul>
-                    <PickDateBlock />
+                    <PickDateBlock toValue={toValue} setToValue={setToValue} />
                 </div>
             </div>
         </header>

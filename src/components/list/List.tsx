@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import { twMerge } from "tailwind-merge";
-import { AnimatePresence } from "motion/react";
+import { LoadMoreBtn } from "./LoadMoreBtn";
 import * as motion from "motion/react-client";
 import { listData } from "@/src/assets/data/listData";
 import { Card } from "./Card";
@@ -12,7 +12,11 @@ export enum ModeEnum {
     TILES = "tiles",
 }
 
-export const List = () => {
+interface ListProps {
+    toValue: Date | null;
+}
+
+export const List = ({ toValue }: ListProps) => {
     const [mode, setMode] = useState<ModeEnum>(ModeEnum.TILES);
 
     const [isAnimating, setIsAnimating] = useState(false);
@@ -38,9 +42,7 @@ export const List = () => {
                 transition={{ duration: 0.3 }}
                 className={twMerge(
                     "grid gap-2 lg:min-w-[836px]",
-                    mode === ModeEnum.ROW
-                        ? ""
-                        : "grid-cols-[repeat(auto-fit,203px)] "
+                    mode === ModeEnum.ROW ? "mb-[33px]" : "grid-cols-4 mb-4"
                 )}
             >
                 {listForRender.map((item, index) => (
@@ -54,10 +56,13 @@ export const List = () => {
                             mode === ModeEnum.ROW ? "" : "max-w-[203px]"
                         )}
                     >
-                        <Card {...item} mode={mode} />
+                        <Card {...item} mode={mode} toValue={toValue} />
                     </motion.li>
                 ))}
             </motion.ul>
+            <div className="text-center">
+                <LoadMoreBtn />
+            </div>
         </div>
     );
 };

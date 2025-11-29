@@ -10,6 +10,7 @@ const { todayLabel, imageUploadLabel } = siteText;
 
 interface CardProps extends ListCardType {
     mode: ModeEnum;
+    toValue: Date | null;
 }
 
 export const Card = ({
@@ -19,6 +20,7 @@ export const Card = ({
     imageUpload,
     today,
     mode,
+    toValue,
 }: CardProps) => {
     const currentDayDataArray = Object.entries(currentDay);
     const todayDataArray = Object.entries(today);
@@ -81,40 +83,62 @@ export const Card = ({
                         ))}
                     </ul>
                 </div>
-                <div className={twMerge(isRow ? "mr-[168px]" : "")}>
-                    <p className="normal-text mb-[7px]">{"09-08-2016"}</p>
-                    <ul
-                        className={twMerge(
-                            "flex ",
-                            isRow
-                                ? "items-center gap-[26px]"
-                                : "flex-col gap-[6px]"
-                        )}
-                    >
-                        {currentDayDataArray.map(([key, value]) => (
-                            <li key={key}>
-                                <p className="flex items-center gap-[6px]">
-                                    <Sprite
-                                        name={`icon-${key}`}
-                                        className="size-[18px]"
-                                    />
-                                    <span>{value}</span>
-                                </p>
-                            </li>
-                        ))}
-                    </ul>
-                </div>
+                {toValue && (
+                    <div className={twMerge(isRow ? "mr-[168px]" : "")}>
+                        <p className="normal-text mb-[7px]">
+                            {toValue
+                                .toLocaleString("en", {
+                                    month: "numeric",
+                                    year: "numeric",
+                                    day: "numeric",
+                                })
+                                .replaceAll("/", "-")}
+                        </p>
+                        <ul
+                            className={twMerge(
+                                "flex ",
+                                isRow
+                                    ? "items-center gap-[26px]"
+                                    : "flex-col gap-[6px]"
+                            )}
+                        >
+                            {currentDayDataArray.map(([key, value]) => (
+                                <li key={key}>
+                                    <p className="flex items-center gap-[6px]">
+                                        <Sprite
+                                            name={`icon-${key}`}
+                                            className="size-[18px]"
+                                        />
+                                        <span>{value}</span>
+                                    </p>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                )}
             </div>
 
             <div
                 className={twMerge(
-                    isRow ? "" : "flex justify-between items-center w-full"
+                    isRow ? "" : "flex justify-between items-center w-full p-3"
                 )}
             >
-                <p className={twMerge("normal-text ", isRow ? "mb-2" : "")}>
+                <p
+                    className={twMerge(
+                        " ",
+                        isRow ? "mb-2 normal-text" : "small-text"
+                    )}
+                >
                     {imageUploadLabel}
                 </p>
-                <p>{imageUpload}</p>
+                <p
+                    className={twMerge(
+                        " ",
+                        isRow ? "small-text" : "smallest-text"
+                    )}
+                >
+                    {imageUpload}
+                </p>
             </div>
         </div>
     );
