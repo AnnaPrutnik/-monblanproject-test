@@ -17,7 +17,7 @@ interface ListProps {
 }
 
 export const List = ({ toValue }: ListProps) => {
-    const [mode, setMode] = useState<ModeEnum>(ModeEnum.TILES);
+    const [mode, setMode] = useState<ModeEnum>(ModeEnum.ROW);
 
     const [isAnimating, setIsAnimating] = useState(false);
 
@@ -42,7 +42,9 @@ export const List = ({ toValue }: ListProps) => {
                 transition={{ duration: 0.3 }}
                 className={twMerge(
                     "grid gap-2 lg:min-w-[836px]",
-                    mode === ModeEnum.ROW ? "mb-[33px]" : "grid-cols-4 mb-4"
+                    mode === ModeEnum.ROW
+                        ? "mb-[33px]"
+                        : "grid-cols-[repeat(auto-fill,203px)] md:grid-cols-[repeat(auto-fill,250px)] justify-center lg:grid-cols-4 mb-4"
                 )}
             >
                 {listForRender.map((item, index) => (

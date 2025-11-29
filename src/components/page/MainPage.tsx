@@ -14,7 +14,7 @@ export const MainPage = () => {
 
     return (
         <div className="relative pb-[63px] md:min-h-[1200px] overflow-x-hidden">
-            <div className="absolute right-[40%] md:right-[55%] top-0 lg:left-0 -z-1 w-full h-auto lg:w-[630px] lg:h-[398px]">
+            <div className="absolute right-[40%] md:right-[55%] lg:right-[unset] top-0 lg:left-0 -z-1 w-full h-auto lg:w-[630px] lg:h-[398px]">
                 <Image
                     src={topDecorationImage}
                     alt=""
@@ -30,7 +30,7 @@ export const MainPage = () => {
                     <List toValue={toValue} />
                 </section>
             </main>
-            <div className="absolute right-0 bottom-[45px]">
+            <div className="absolute right-0 bottom-[10px] lg:bottom-[45px] w-[100px] md:w-[170px] h-auto lg:w-[210px]">
                 <Image
                     src={bottomDecoration}
                     alt=""

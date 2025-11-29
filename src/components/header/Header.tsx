@@ -14,7 +14,7 @@ interface HeaderProps {
 export const Header = ({ setToValue, toValue }: HeaderProps) => {
     return (
         <header className="shadow-header bg-white-opacity">
-            <div className="box pt-[6px] pb-[28px] flex gap-3 lg:gap-[86px] md:justify-evenly">
+            <div className="box pt-[6px] pb-[28px] flex gap-3 lg:gap-[86px] md:justify-evenly lg:justify-start">
                 <div className="ml-3 md:ml-[55px] shrink-0 absolute top-3 left-5 md:static">
                     <Image
                         src={logo}
@@ -26,7 +26,7 @@ export const Header = ({ setToValue, toValue }: HeaderProps) => {
                 </div>
 
                 <div className="pb-[3px] pt-3 md:pt-0 flex flex-col justify-end">
-                    <div className="flex gap-4 mb-4 items-center flex-wrap ml-24 md:ml-0">
+                    <div className="flex gap-4 mb-4 items-center flex-col lg:flex-row ml-24 md:ml-0 ">
                         <h1 className="font-montserrat font-medium logo-text tracking-[-0.01em]">
                             {name}
                         </h1>

@@ -35,7 +35,7 @@ export const PickDateBlock = ({ setToValue, toValue }: ToValueProps) => {
         <div className="relative">
             <motion.button
                 layout
-                className="border rounded-md px-3 py-2 border-neutral-60 text-neutral-80 w-[180px] md:hidden"
+                className="border rounded-md px-3 py-2 border-neutral-60 text-neutral-80 w-[180px] md:hidden bg-neutral-0"
                 onClick={() => setOpenDateTab(prev => !prev)}
             >
                 {buttonLabel}
