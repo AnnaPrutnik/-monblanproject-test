@@ -10,7 +10,7 @@ import topDecorationImage from "@/src/assets/images/bg-decoration.svg";
 import bottomDecoration from "@/src/assets/images/bg-decoration-bottom.svg";
 
 export const MainPage = () => {
-    const [toValue, setToValue] = useState<Date | null>(new Date("08-09-2016"));
+    const [toValue, setToValue] = useState<Date | null>(new Date());
 
     return (
         <div className="relative pb-[63px] md:min-h-[1200px] overflow-x-hidden">
