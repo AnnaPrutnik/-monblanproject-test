@@ -43,7 +43,7 @@ The project is deployed and available at:
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/AnnaPrutnik/-monblanproject-test.git
+git clone https://github.com/AnnaPrutnik/-monblanproject-test.git webspark
 cd webspark
 ```
 
