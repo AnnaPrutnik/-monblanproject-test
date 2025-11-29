@@ -63,7 +63,7 @@ export const Card = ({
                     className={twMerge(
                         "flex",
                         isRow
-                            ? "justify-evenly grow lg:justify-start"
+                            ? "justify-start md:justify-evenly grow lg:justify-start"
                             : " mb-6 justify-between w-full "
                     )}
                 >
