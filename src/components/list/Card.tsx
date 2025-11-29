@@ -55,7 +55,7 @@ export const Card = ({
                 className={twMerge(
                     "flex ",
                     isRow
-                        ? "flex-col gap-3 pb-2 pt-2 lg:pt-0 lg:pb-0 lg:gap-0 md:flex-row grow lg:grow-0 md:pr-10 lg:pr-0"
+                        ? "flex-col gap-3 pb-2 pt-2 lg:pt-0 lg:pb-0 lg:gap-0 md:flex-row  grow lg:grow-0 md:pr-10 lg:pr-0"
                         : "flex-col w-full px-3 pt-3 pb-[18px]"
                 )}
             >
@@ -95,8 +95,8 @@ export const Card = ({
                         </ul>
                     </div>
                     {toValue && (
-                        <div className={twMerge(isRow ? "mr-[168px]" : "")}>
-                            <p className="normal-text mb-[7px]">
+                        <div className={twMerge(isRow ? "lg:mr-[168px]" : "")}>
+                            <p className="normal-text mb-[7px] text-nowrap">
                                 {toValue
                                     .toLocaleString("uk", {
                                         month: "numeric",
