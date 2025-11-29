@@ -1,36 +1,136 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Webspark Test Task
 
-## Getting Started
+A modern, accessible web application built with Next.js for displaying and
+filtering social media posts with date range selection.
 
-First, run the development server:
+## 🚀 Tech Stack
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- **Framework**: Next.js 16 (App Router)
+- **Language**: TypeScript 5
+- **Styling**: Tailwind CSS 4
+- **UI Libraries**:
+    - `react-datepicker` - Date range selection
+    - `motion` (Framer Motion) - Smooth animations
+- **Fonts**: Roboto, Montserrat (via Next.js font optimization)
+
+## 📋 Features
+
+- **Date Range Filtering**: Select "from" and "to" dates to filter posts
+- **View Modes**: Switch between tiles and row layouts
+- **Responsive Design**: Mobile-first approach with breakpoints at 768px and
+  1440px
+- **Accessibility**: WCAG-compliant implementation with proper semantic HTML,
+  ARIA labels, and keyboard navigation
+- **Cross-browser Compatibility**: Tested and optimized for modern browsers
+  (Chrome, Firefox, Safari, Edge)
+
+## 📁 Project Structure
+
+```
+webspark/
+├── app/
+│   ├── layout.tsx          # Root layout with font configuration
+│   ├── page.tsx            # Home page entry point
+│   └── globals.css         # Global styles and Tailwind configuration
+├── src/
+│   ├── assets/
+│   │   ├── data/           # Static data (text, list items)
+│   │   └── images/         # Image assets
+│   └── components/
+│       ├── header/         # Header component with date picker
+│       ├── list/           # Post list, cards, view switcher
+│       ├── page/           # Main page component
+│       └── shared/         # Shared components (Sprite)
+└── public/
+    └── images/
+        └── sprite.svg      # SVG sprite for icons
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## ♿ Accessibility Features
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+This project follows WCAG 2.1 guidelines and best practices:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Semantic HTML
 
-## Learn More
+- Proper use of `<header>`, `<main>`, `<section>`, and `<h1>` elements
+- Form inputs are properly associated with `<label>` elements using `htmlFor`
+  and `id`
 
-To learn more about Next.js, take a look at the following resources:
+### ARIA Labels
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- All interactive buttons have descriptive `aria-label` attributes
+- Date picker buttons clearly indicate their purpose ("Clear start date", "Open
+  end date calendar")
+- View switcher radio buttons are accessible to screen readers
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Keyboard Navigation
 
-## Deploy on Vercel
+- Radio buttons in view switcher are keyboard-accessible (using `sr-only` class
+  instead of `hidden`)
+- Focus indicators are visible for keyboard users
+- Date picker supports keyboard navigation with visible focus states
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Screen Reader Support
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Decorative SVG icons are marked with `aria-hidden="true"`
+- Decorative background images use empty `alt=""` attributes
+- All meaningful content is properly announced
+
+### Focus Management
+
+- Custom focus styles for date picker calendar days
+- Focus-visible states for view switcher buttons
+
+## 🌐 Cross-browser Compatibility
+
+The project is optimized for modern browsers:
+
+- ✅ Chrome/Edge (latest)
+- ✅ Firefox (latest)
+- ✅ Safari (latest)
+- ✅ Mobile browsers (iOS Safari, Chrome Mobile)
+
+### Implementation Details
+
+- CSS custom properties for consistent theming
+- Modern JavaScript features (ES2017+)
+- Next.js automatic polyfills for required features
+- Tailwind CSS 4 with PostCSS for optimal CSS output
+
+## 🎨 Styling Approach
+
+- **Tailwind CSS 4** with custom theme configuration
+- **CSS Custom Properties** for colors, shadows, and breakpoints
+- **Responsive Design** using mobile-first breakpoints:
+    - Mobile: default (< 768px)
+    - Tablet: `md` (≥ 768px)
+    - Desktop: `lg` (≥ 1440px)
+- **Custom Utilities** for reusable patterns (`box`, `normal-text`,
+  `small-text`, etc.)
+
+## 🔧 Key Implementation Details
+
+### Date Range Input
+
+- Custom styled `react-datepicker` component
+- Proper label association for form accessibility
+- Dynamic `aria-label` based on input type (from/to)
+- Visual focus indicators for keyboard navigation
+
+### View Switcher
+
+- Radio button group with proper accessibility
+- Smooth transitions between view modes
+- Keyboard accessible with visible focus states
+
+### Animations
+
+- Framer Motion for smooth layout transitions
+- Opacity animations when switching view modes
+- Respects user preferences (can be extended with `prefers-reduced-motion`)
+
+### SVG Sprite System
+
+- Centralized icon management via SVG sprite
+- Decorative icons properly marked for screen readers
+- Flexible component with optional accessibility props

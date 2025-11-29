@@ -53,14 +53,18 @@ button {
     }
 }
 
+@utility logo-text {
+    @apply text-[16px] lg:text-[24px];
+}
+
 @utility normal-text {
-    font-size: 16px;
+    @apply text-[14px] lg:text-[16px];
 }
 
 @utility small-text {
-    font-size: 14px;
+    @apply text-[12px] lg:text-[14px];
 }
 
 @utility smallest-text {
-    font-size: 12px;
+    @apply text-[10px] lg:text-[12px];
 }

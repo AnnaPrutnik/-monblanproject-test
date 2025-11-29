@@ -108,7 +108,7 @@ export const DateRangeInput = ({
                 onChange={setValue}
                 placeholderText={name}
                 dateFormat={"dd_MM_yyyy"}
-                className=" border border-neutral-20 rounded-sm w-[162px] h-[28px] shrink pl-2 text-[13px] text-neutral-70 placeholder:text-neutral-70 focus:outline-none "
+                className="bg-white border border-neutral-20 rounded-sm w-[162px] h-[28px] shrink pl-2 text-[13px] text-neutral-70 placeholder:text-neutral-70 focus:outline-none "
             />
 
             <div className="flex absolute top-px right-px">

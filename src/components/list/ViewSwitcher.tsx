@@ -30,7 +30,10 @@ export const ViewSwitcher = ({ changeMode, mode }: ViewSwitcherProps) => {
                             : "text-neutral-40"
                     )}
                 >
-                    <Sprite name="icon-row" className="w-6 h-[22px]" />
+                    <Sprite
+                        name="icon-row"
+                        className="w-4 h-[15px] md:w-5 md:h-[18px] lg:w-6 lg:h-[22px]"
+                    />
                 </div>
             </label>
 
@@ -52,7 +55,10 @@ export const ViewSwitcher = ({ changeMode, mode }: ViewSwitcherProps) => {
                             : "text-neutral-40"
                     )}
                 >
-                    <Sprite name="icon-tiles" className="w-6 h-[22px]" />
+                    <Sprite
+                        name="icon-tiles"
+                        className="w-4 h-[15px] md:w-5 md:h-[18px] lg:w-6 lg:h-[22px]"
+                    />
                 </div>
             </label>
         </div>

@@ -13,8 +13,8 @@ export const MainPage = () => {
     const [toValue, setToValue] = useState<Date | null>(new Date("09-08-2016"));
 
     return (
-        <div className="relative pb-[63px] min-h-[1200px]">
-            <div className="absolute top-0 left-0 -z-1 w-[630px] h-[398px]">
+        <div className="relative pb-[63px] md:min-h-[1200px] overflow-x-hidden">
+            <div className="absolute right-[40%] md:right-[55%] top-0 lg:left-0 -z-1 w-full h-auto lg:w-[630px] lg:h-[398px]">
                 <Image
                     src={topDecorationImage}
                     alt=""
@@ -26,14 +26,16 @@ export const MainPage = () => {
             </div>
             <Header toValue={toValue} setToValue={setToValue} />
             <main>
-                <List toValue={toValue} />
+                <section>
+                    <List toValue={toValue} />
+                </section>
             </main>
             <div className="absolute right-0 bottom-[45px]">
                 <Image
                     src={bottomDecoration}
                     alt=""
                     aria-hidden
-                    className="w-full"
+                    className="w-full relative -z-1"
                     width={210}
                     height={368}
                 />
