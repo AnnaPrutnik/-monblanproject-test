@@ -32,11 +32,6 @@
         margin: 1px;
     }
 
-    & .react-datepicker__day--keyboard-selected {
-        background-color: transparent;
-        color: var(--color-neutral-90);
-    }
-
     & .sunday-highlight {
         background-color: var(--color-neutral-0);
     }
@@ -46,7 +41,8 @@
         color: var(--color-neutral-60);
     }
 
-    & .react-datepicker__day--selected {
+    & .react-datepicker__day--selected,
+    & .react-datepicker__day--keyboard-selected {
         background-color: var(--color-accent);
         color: var(--color-white);
     }

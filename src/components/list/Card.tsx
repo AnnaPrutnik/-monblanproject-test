@@ -31,9 +31,7 @@ export const Card = ({
         <div
             className={twMerge(
                 "bg-white flex small-text font-medium",
-                isRow
-                    ? "items-start lg:items-center"
-                    : "flex-col items-center pb-[18px]"
+                isRow ? "items-start lg:items-center" : "flex-col items-center "
             )}
         >
             {isRow ? (
@@ -57,8 +55,8 @@ export const Card = ({
                 className={twMerge(
                     "flex ",
                     isRow
-                        ? "flex-col gap-3 pb-2 pt-2 lg:pt-0 lg:pb-0 lg:gap-0 md:flex-row grow md:pr-10 lg:pr-0"
-                        : "flex-col w-full"
+                        ? "flex-col gap-3 pb-2 pt-2 lg:pt-0 lg:pb-0 lg:gap-0 md:flex-row grow lg:grow-0 md:pr-10 lg:pr-0"
+                        : "flex-col w-full px-3 pt-3 pb-[18px]"
                 )}
             >
                 <div
@@ -66,7 +64,7 @@ export const Card = ({
                         "flex",
                         isRow
                             ? "justify-evenly grow lg:justify-start"
-                            : "p-3 pb-6 justify-between w-full "
+                            : " mb-6 justify-between w-full "
                     )}
                 >
                     <div
@@ -105,7 +103,7 @@ export const Card = ({
                                         year: "numeric",
                                         day: "numeric",
                                     })
-                                    .replaceAll("/", "-")}
+                                    .replaceAll(".", "-")}
                             </p>
                             <ul
                                 className={twMerge(
@@ -135,7 +133,7 @@ export const Card = ({
                     className={twMerge(
                         isRow
                             ? "flex md:flex-col gap-2 items-baseline lg:gap-0 "
-                            : "flex justify-between items-center w-full p-3"
+                            : "flex justify-between items-center w-full p-3 md:p-0"
                     )}
                 >
                     <p
